@@ -1,0 +1,1359 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConstructConnect - Shram Setu</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#FF0000',secondary:'#1A1A1A'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet">
+    <style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Roboto', sans-serif;
+background-color: #0A0A0A;
+color: #FFFFFF;
+}
+.futuristic-font {
+font-family: 'Orbitron', sans-serif;
+}
+.nav-link {
+position: relative;
+}
+.nav-link::after {
+content: '';
+position: absolute;
+width: 0;
+height: 2px;
+bottom: -5px;
+left: 0;
+background-color: #FF0000;
+transition: width 0.3s;
+}
+.nav-link:hover::after {
+width: 100%;
+}
+.glow-button {
+transition: all 0.3s;
+box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.5);
+}
+.glow-button:hover {
+box-shadow: 0 0 15px 0 rgba(255, 0, 0, 0.7);
+}
+.service-card {
+transition: all 0.3s;
+}
+.service-card:hover {
+transform: translateY(-10px);
+box-shadow: 0 10px 20px rgba(255, 0, 0, 0.3);
+}
+.testimonial-card {
+transition: all 0.3s;
+}
+.testimonial-card:hover {
+transform: scale(1.03);
+}
+.social-icon {
+transition: all 0.3s;
+}
+.social-icon:hover {
+transform: scale(1.2);
+color: #FF0000;
+}
+.form-input {
+background-color: rgba(30, 30, 30, 0.8);
+border: 1px solid #333;
+transition: all 0.3s;
+}
+.form-input:focus {
+border-color: #FF0000;
+box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.2);
+}
+.counter {
+font-family: 'Orbitron', sans-serif;
+}
+.how-it-works-card {
+transition: all 0.3s;
+border: 1px solid #333;
+}
+.how-it-works-card:hover {
+border-color: #FF0000;
+box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+}
+.custom-switch {
+position: relative;
+display: inline-block;
+width: 60px;
+height: 30px;
+}
+.custom-switch input {
+opacity: 0;
+width: 0;
+height: 0;
+}
+.slider {
+position: absolute;
+cursor: pointer;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #333;
+transition: .4s;
+border-radius: 30px;
+}
+.slider:before {
+position: absolute;
+content: "";
+height: 22px;
+width: 22px;
+left: 4px;
+bottom: 4px;
+background-color: white;
+transition: .4s;
+border-radius: 50%;
+}
+input:checked + .slider {
+background-color: #FF0000;
+}
+input:checked + .slider:before {
+transform: translateX(30px);
+}
+.custom-checkbox {
+position: relative;
+padding-left: 30px;
+cursor: pointer;
+user-select: none;
+}
+.custom-checkbox input {
+position: absolute;
+opacity: 0;
+cursor: pointer;
+height: 0;
+width: 0;
+}
+.checkmark {
+position: absolute;
+top: 0;
+left: 0;
+height: 20px;
+width: 20px;
+background-color: #333;
+border-radius: 4px;
+}
+.custom-checkbox:hover input ~ .checkmark {
+background-color: #444;
+}
+.custom-checkbox input:checked ~ .checkmark {
+background-color: #FF0000;
+}
+.checkmark:after {
+content: "";
+position: absolute;
+display: none;
+}
+.custom-checkbox input:checked ~ .checkmark:after {
+display: block;
+}
+.custom-checkbox .checkmark:after {
+left: 7px;
+top: 3px;
+width: 6px;
+height: 12px;
+border: solid white;
+border-width: 0 2px 2px 0;
+transform: rotate(45deg);
+}
+.star-rating {
+color: #666;
+}
+.star-rating .filled {
+color: #FF0000;
+}
+.range-slider {
+-webkit-appearance: none;
+appearance: none;
+width: 100%;
+height: 8px;
+border-radius: 5px;
+background: #333;
+outline: none;
+}
+.range-slider::-webkit-slider-thumb {
+-webkit-appearance: none;
+appearance: none;
+width: 20px;
+height: 20px;
+border-radius: 50%;
+background: #FF0000;
+cursor: pointer;
+transition: all 0.3s;
+}
+.range-slider::-webkit-slider-thumb:hover {
+box-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+}
+.range-slider::-moz-range-thumb {
+width: 20px;
+height: 20px;
+border-radius: 50%;
+background: #FF0000;
+cursor: pointer;
+border: none;
+transition: all 0.3s;
+}
+.range-slider::-moz-range-thumb:hover {
+box-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+}
+</style>
+  </head>
+  <body>
+    <!-- Header & Navigation -->
+    <header
+      class="fixed w-full bg-secondary bg-opacity-90 backdrop-blur-md z-50">
+      <div class="container mx-auto px-6 py-4">
+        <div class="flex justify-between items-center">
+          <div class="flex items-center">
+            <a href="#"
+              class="font-['Pacifico'] text-primary text-3xl mr-10 transition-all duration-300 hover:text-opacity-80">logo</a>
+            <nav class="hidden md:flex space-x-8">
+              <a href="#home"
+                class="nav-link text-white hover:text-primary transition-colors duration-300">Home</a>
+              <a href="#how-it-works"
+                class="nav-link text-white hover:text-primary transition-colors duration-300">How
+                It Works</a>
+              <a href="#services"
+                class="nav-link text-white hover:text-primary transition-colors duration-300">Services</a>
+              <a href="#professionals"
+                class="nav-link text-white hover:text-primary transition-colors duration-300">Professionals</a>
+              <a href="#testimonials"
+                class="nav-link text-white hover:text-primary transition-colors duration-300">Testimonials</a>
+              <a href="#contact"
+                class="nav-link text-white hover:text-primary transition-colors duration-300">Contact</a>
+            </nav>
+          </div>
+          <div class="flex items-center space-x-4">
+            <button id="loginBtn"
+              class="hidden md:block bg-transparent border border-primary text-primary px-6 py-2 !rounded-button hover:bg-primary hover:text-white transition-all duration-300 whitespace-nowrap">Log
+              In</button>
+            <button
+              class="hidden md:block bg-primary text-white px-6 py-2 !rounded-button glow-button whitespace-nowrap">Register</button>
+            <button
+              class="md:hidden w-10 h-10 flex items-center justify-center text-white">
+              <i class="ri-menu-line ri-2x"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center pt-20"
+      style="background-image: url('https://public.readdy.ai/ai/img_res/1c7014a7a200c24c7db4a1b381105aff.jpg'); background-size: cover; background-position: center;">
+      <div
+        class="absolute inset-0 bg-gradient-to-r from-black to-transparent"></div>
+      <div class="container mx-auto px-6 relative z-10">
+        <div class="max-w-2xl">
+          <h1
+            class="futuristic-font text-5xl md:text-6xl font-bold mb-6 text-white leading-tight"><span
+              class="text-primary">Shram Setu</span></h1>
+          <p class="text-xl mb-8 text-gray-300">The ultimate platform connecting
+            construction professionals with clients. Like Uber for construction
+            services, we're revolutionizing how projects get done.</p>
+          <div
+            class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
+            <button
+              class="bg-primary text-white px-8 py-4 !rounded-button text-lg glow-button whitespace-nowrap">
+              <i class="ri-search-line mr-2"></i> Find Workers
+            </button>
+            <button
+              class="bg-transparent border-2 border-primary text-white px-8 py-4 !rounded-button text-lg hover:bg-primary hover:bg-opacity-20 transition-all duration-300 whitespace-nowrap">
+              <i class="ri-user-add-line mr-2"></i> Join as Professional
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Construction Carousel -->
+    <section class="py-20 bg-black">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="futuristic-font text-4xl font-bold mb-4">Construction <span
+              class="text-primary">Projects</span></h2>
+          <p class="text-gray-400 max-w-2xl mx-auto">Explore our featured
+            construction projects and success stories from around the world.</p>
+        </div>
+
+        <div class="relative">
+          <!-- Carousel container -->
+          <div class="overflow-hidden !rounded-lg">
+            <div id="carousel"
+              class="flex transition-transform duration-500 ease-in-out">
+              <!-- Carousel item 1 -->
+              <div class="w-full flex-shrink-0">
+                <div class="relative h-96">
+                  <img
+                    src="https://public.readdy.ai/ai/img_res/d417aa39854b2763c5cd4bf23f8817d0.jpg"
+                    class="w-full h-full object-cover"
+                    alt="Modern Skyscraper Construction">
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
+                  <div class="absolute bottom-0 left-0 p-8">
+                    <h3
+                      class="futuristic-font text-2xl font-bold text-white mb-2">Skyline
+                      Tower Project</h3>
+                    <p class="text-gray-300 mb-4">A 50-story commercial tower
+                      featuring cutting-edge sustainable design and smart
+                      building technology.</p>
+                    <button
+                      class="bg-primary text-white px-4 py-2 !rounded-button whitespace-nowrap">View
+                      Details</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Carousel item 2 -->
+              <div class="w-full flex-shrink-0">
+                <div class="relative h-96">
+                  <img
+                    src="https://public.readdy.ai/ai/img_res/ad06f6d8d3ce5557811803cf41124703.jpg"
+                    class="w-full h-full object-cover"
+                    alt="Highway Infrastructure">
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
+                  <div class="absolute bottom-0 left-0 p-8">
+                    <h3
+                      class="futuristic-font text-2xl font-bold text-white mb-2">Metro
+                      Highway Extension</h3>
+                    <p class="text-gray-300 mb-4">A 25-mile highway expansion
+                      project connecting urban centers with advanced traffic
+                      management systems.</p>
+                    <button
+                      class="bg-primary text-white px-4 py-2 !rounded-button whitespace-nowrap">View
+                      Details</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Carousel item 3 -->
+              <div class="w-full flex-shrink-0">
+                <div class="relative h-96">
+                  <img
+                    src="https://public.readdy.ai/ai/img_res/52f37e2102f387608600dfeb2e79a437.jpg"
+                    class="w-full h-full object-cover"
+                    alt="Residential Complex">
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
+                  <div class="absolute bottom-0 left-0 p-8">
+                    <h3
+                      class="futuristic-font text-2xl font-bold text-white mb-2">Green
+                      Valley Residences</h3>
+                    <p class="text-gray-300 mb-4">A sustainable residential
+                      complex featuring 200 units with zero-carbon footprint and
+                      community spaces.</p>
+                    <button
+                      class="bg-primary text-white px-4 py-2 !rounded-button whitespace-nowrap">View
+                      Details</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Carousel controls -->
+          <button id="prevBtn"
+            class="absolute top-1/2 left-4 transform -translate-y-1/2 w-12 h-12 bg-black bg-opacity-50 !rounded-full flex items-center justify-center text-white hover:bg-primary transition-colors duration-300">
+            <i class="ri-arrow-left-s-line ri-lg"></i>
+          </button>
+          <button id="nextBtn"
+            class="absolute top-1/2 right-4 transform -translate-y-1/2 w-12 h-12 bg-black bg-opacity-50 !rounded-full flex items-center justify-center text-white hover:bg-primary transition-colors duration-300">
+            <i class="ri-arrow-right-s-line ri-lg"></i>
+          </button>
+
+          <!-- Carousel indicators -->
+          <div class="flex justify-center mt-6 space-x-2">
+            <button
+              class="carousel-indicator w-3 h-3 !rounded-full bg-primary"></button>
+            <button
+              class="carousel-indicator w-3 h-3 !rounded-full bg-gray-600"></button>
+            <button
+              class="carousel-indicator w-3 h-3 !rounded-full bg-gray-600"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="py-20 bg-black">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="futuristic-font text-4xl font-bold mb-4">How It <span
+              class="text-primary">Works</span></h2>
+          <p class="text-gray-400 max-w-2xl mx-auto">Our platform simplifies the
+            process of connecting construction professionals with clients,
+            making it as easy as ordering a ride.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div
+            class="how-it-works-card bg-secondary p-8 !rounded-lg relative overflow-hidden">
+            <div
+              class="absolute top-0 right-0 w-16 h-16 bg-primary bg-opacity-20 flex items-center justify-center !rounded-bl-lg">
+              <span class="text-primary font-bold text-xl">01</span>
+            </div>
+            <div
+              class="w-20 h-20 bg-black !rounded-full flex items-center justify-center mb-6">
+              <i class="ri-file-list-3-line ri-2x text-primary"></i>
+            </div>
+            <h3 class="futuristic-font text-2xl font-bold mb-4">Post Your
+              Requirement</h3>
+            <p class="text-gray-400">Describe your construction needs in detail.
+              Specify the type of work, location, timeline, and budget
+              requirements.</p>
+          </div>
+          <div
+            class="how-it-works-card bg-secondary p-8 !rounded-lg relative overflow-hidden">
+            <div
+              class="absolute top-0 right-0 w-16 h-16 bg-primary bg-opacity-20 flex items-center justify-center !rounded-bl-lg">
+              <span class="text-primary font-bold text-xl">02</span>
+            </div>
+            <div
+              class="w-20 h-20 bg-black !rounded-full flex items-center justify-center mb-6">
+              <i class="ri-team-line ri-2x text-primary"></i>
+            </div>
+            <h3 class="futuristic-font text-2xl font-bold mb-4">Connect with
+              Professionals</h3>
+            <p class="text-gray-400">Our AI-powered system matches you with the
+              best professionals for your job. Review profiles, ratings, and
+              previous work.</p>
+          </div>
+          <div
+            class="how-it-works-card bg-secondary p-8 !rounded-lg relative overflow-hidden">
+            <div
+              class="absolute top-0 right-0 w-16 h-16 bg-primary bg-opacity-20 flex items-center justify-center !rounded-bl-lg">
+              <span class="text-primary font-bold text-xl">03</span>
+            </div>
+            <div
+              class="w-20 h-20 bg-black !rounded-full flex items-center justify-center mb-6">
+              <i class="ri-check-double-line ri-2x text-primary"></i>
+            </div>
+            <h3 class="futuristic-font text-2xl font-bold mb-4">Complete the
+              Project</h3>
+            <p class="text-gray-400">Hire your chosen professional, track
+              progress in real-time, and make secure payments through our
+              platform.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Services Section -->
+    <section id="services"
+      class="py-20 bg-gradient-to-b from-black to-secondary">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="futuristic-font text-4xl font-bold mb-4">Our <span
+              class="text-primary">Services</span></h2>
+          <p class="text-gray-400 max-w-2xl mx-auto">We connect you with skilled
+            professionals across all construction disciplines to meet your
+            specific project needs.</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+            class="service-card bg-black p-6 !rounded-lg border border-gray-800">
+            <div
+              class="w-16 h-16 bg-secondary !rounded-full flex items-center justify-center mb-6">
+              <i class="ri-flashlight-line ri-2x text-primary"></i>
+            </div>
+            <h3 class="futuristic-font text-xl font-bold mb-3">Electrical
+              Work</h3>
+            <p class="text-gray-400 mb-4">Professional electrical services for
+              residential and commercial projects, including wiring,
+              installations, and repairs.</p>
+            <a href="#" class="text-primary inline-flex items-center">
+              Learn More <i class="ri-arrow-right-line ml-2"></i>
+            </a>
+          </div>
+          <div
+            class="service-card bg-black p-6 !rounded-lg border border-gray-800">
+            <div
+              class="w-16 h-16 bg-secondary !rounded-full flex items-center justify-center mb-6">
+              <i class="ri-drop-line ri-2x text-primary"></i>
+            </div>
+            <h3 class="futuristic-font text-xl font-bold mb-3">Plumbing</h3>
+            <p class="text-gray-400 mb-4">Expert plumbing services including
+              pipe installation, fixture repairs, drainage solutions, and
+              emergency fixes.</p>
+            <a href="#" class="text-primary inline-flex items-center">
+              Learn More <i class="ri-arrow-right-line ml-2"></i>
+            </a>
+          </div>
+          <div
+            class="service-card bg-black p-6 !rounded-lg border border-gray-800">
+            <div
+              class="w-16 h-16 bg-secondary !rounded-full flex items-center justify-center mb-6">
+              <i class="ri-hammer-line ri-2x text-primary"></i>
+            </div>
+            <h3 class="futuristic-font text-xl font-bold mb-3">Carpentry</h3>
+            <p class="text-gray-400 mb-4">Skilled carpenters for custom
+              woodwork, furniture building, structural framing, and finishing
+              touches.</p>
+            <a href="#" class="text-primary inline-flex items-center">
+              Learn More <i class="ri-arrow-right-line ml-2"></i>
+            </a>
+          </div>
+          <div
+            class="service-card bg-black p-6 !rounded-lg border border-gray-800">
+            <div
+              class="w-16 h-16 bg-secondary !rounded-full flex items-center justify-center mb-6">
+              <i class="ri-brick-wall-line ri-2x text-primary"></i>
+            </div>
+            <h3 class="futuristic-font text-xl font-bold mb-3">Masonry</h3>
+            <p class="text-gray-400 mb-4">Professional masonry services for
+              brick, stone, and concrete work, including walls, patios, and
+              decorative elements.</p>
+            <a href="#" class="text-primary inline-flex items-center">
+              Learn More <i class="ri-arrow-right-line ml-2"></i>
+            </a>
+          </div>
+          <div
+            class="service-card bg-black p-6 !rounded-lg border border-gray-800">
+            <div
+              class="w-16 h-16 bg-secondary !rounded-full flex items-center justify-center mb-6">
+              <i class="ri-paint-brush-line ri-2x text-primary"></i>
+            </div>
+            <h3 class="futuristic-font text-xl font-bold mb-3">Painting</h3>
+            <p class="text-gray-400 mb-4">Expert painters for interior and
+              exterior projects, offering color consultation, surface
+              preparation, and quality finishes.</p>
+            <a href="#" class="text-primary inline-flex items-center">
+              Learn More <i class="ri-arrow-right-line ml-2"></i>
+            </a>
+          </div>
+          <div
+            class="service-card bg-black p-6 !rounded-lg border border-gray-800">
+            <div
+              class="w-16 h-16 bg-secondary !rounded-full flex items-center justify-center mb-6">
+              <i class="ri-temp-cold-line ri-2x text-primary"></i>
+            </div>
+            <h3 class="futuristic-font text-xl font-bold mb-3">HVAC</h3>
+            <p class="text-gray-400 mb-4">Comprehensive heating, ventilation,
+              and air conditioning services, including installation,
+              maintenance, and emergency repairs.</p>
+            <a href="#" class="text-primary inline-flex items-center">
+              Learn More <i class="ri-arrow-right-line ml-2"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Professional Fields -->
+    <section id="professionals" class="py-20 bg-secondary">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="futuristic-font text-4xl font-bold mb-4">Professional <span
+              class="text-primary">Fields</span></h2>
+          <p class="text-gray-400 max-w-2xl mx-auto">Browse through our diverse
+            range of construction professionals, each vetted and rated by our
+            community.</p>
+        </div>
+        <div class="mb-8 flex flex-wrap justify-center gap-4">
+          <button
+            class="bg-primary text-white px-4 py-2 !rounded-full text-sm whitespace-nowrap">All
+            Categories</button>
+          <button
+            class="bg-black text-white px-4 py-2 !rounded-full text-sm hover:bg-primary transition-colors duration-300 whitespace-nowrap">Residential</button>
+          <button
+            class="bg-black text-white px-4 py-2 !rounded-full text-sm hover:bg-primary transition-colors duration-300 whitespace-nowrap">Commercial</button>
+          <button
+            class="bg-black text-white px-4 py-2 !rounded-full text-sm hover:bg-primary transition-colors duration-300 whitespace-nowrap">Industrial</button>
+          <button
+            class="bg-black text-white px-4 py-2 !rounded-full text-sm hover:bg-primary transition-colors duration-300 whitespace-nowrap">Infrastructure</button>
+        </div>
+        <div class="overflow-x-auto pb-4">
+          <div class="flex space-x-6 min-w-max">
+            <div
+              class="bg-black p-6 !rounded-lg w-72 flex-shrink-0 border border-gray-800 hover:border-primary transition-all duration-300">
+              <div class="flex justify-between items-start mb-4">
+                <div
+                  class="w-16 h-16 bg-secondary !rounded-full flex items-center justify-center">
+                  <i class="ri-user-line ri-2x text-primary"></i>
+                </div>
+                <div class="star-rating flex">
+                  <i class="ri-star-fill filled"></i>
+                  <i class="ri-star-fill filled"></i>
+                  <i class="ri-star-fill filled"></i>
+                  <i class="ri-star-fill filled"></i>
+                  <i class="ri-star-half-fill filled"></i>
+                  <span class="ml-1 text-white">4.8</span>
+                </div>
+              </div>
+              <h3 class="futuristic-font text-xl font-bold mb-2">General
+                Contractor</h3>
+              <p class="text-gray-400 mb-4">Manages and coordinates entire
+                construction projects from start to finish.</p>
+              <div class="flex justify-between items-center">
+                <span
+                  class="bg-primary bg-opacity-20 text-primary px-3 py-1 !rounded-full text-xs">Expert
+                  Level</span>
+                <button
+                  class="text-primary hover:text-white hover:bg-primary !rounded-full w-8 h-8 flex items-center justify-center transition-colors duration-300">
+                  <i class="ri-arrow-right-line"></i>
+                </button>
+              </div>
+            </div>
+            <div
+              class="bg-black p-6 !rounded-lg w-72 flex-shrink-0 border border-gray-800 hover:border-primary transition-all duration-300">
+              <div class="flex justify-between items-start mb-4">
+                <div
+                  class="w-16 h-16 bg-secondary !rounded-full flex items-center justify-center">
+                  <i class="ri-building-line ri-2x text-primary"></i>
+                </div>
+                <div class="star-rating flex">
+                  <i class="ri-star-fill filled"></i>
+                  <i class="ri-star-fill filled"></i>
+                  <i class="ri-star-fill filled"></i>
+                  <i class="ri-star-fill filled"></i>
+                  <i class="ri-star-line"></i>
+                  <span class="ml-1 text-white">4.2</span>
+                </div>
+              </div>
+              <h3 class="futuristic-font text-xl font-bold mb-2">Architect</h3>
+              <p class="text-gray-400 mb-4">Designs buildings and structures
+                with focus on aesthetics and functionality.</p>
+              <div class="flex justify-between items-center">
+                <span
+                  class="bg-primary bg-opacity-20 text-primary px-3 py-1 !rounded-full text-xs">Professional</span>
+                <button
+                  class="text-primary hover:text-white hover:bg-primary !rounded-full w-8 h-8 flex items-center justify-center transition-colors duration-300">
+                  <i class="ri-arrow-right-line"></i>
+                </button>
+              </div>
+            </div>
+            <div
+              class="bg-black p-6 !rounded-lg w-72 flex-shrink-0 border border-gray-800 hover:border-primary transition-all duration-300">
+              <div class="flex justify-between items-start mb-4">
+                <div
+                  class="w-16 h-16 bg-secondary !rounded-full flex items-center justify-center">
+                  <i class="ri-ruler-line ri-2x text-primary"></i>
+                </div>
+                <div class="star-rating flex">
+                  <i class="ri-star-fill filled"></i>
+                  <i class="ri-star-fill filled"></i>
+                  <i class="ri-star-fill filled"></i>
+                  <i class="ri-star-fill filled"></i>
+                  <i class="ri-star-fill filled"></i>
+                  <span class="ml-1 text-white">4.9</span>
+                </div>
+              </div>
+              <h3 class="futuristic-font text-xl font-bold mb-2">Civil
+                Engineer</h3>
+              <p class="text-gray-400 mb-4">Designs and oversees construction of
+                infrastructure projects like roads and bridges.</p>
+              <div class="flex justify-between items-center">
+                <span
+                  class="bg-primary bg-opacity-20 text-primary px-3 py-1 !rounded-full text-xs">Expert
+                  Level</span>
+                <button
+                  class="text-primary hover:text-white hover:bg-primary !rounded-full w-8 h-8 flex items-center justify-center transition-colors duration-300">
+                  <i class="ri-arrow-right-line"></i>
+                </button>
+              </div>
+            </div>
+            <div
+              class="bg-black p-6 !rounded-lg w-72 flex-shrink-0 border border-gray-800 hover:border-primary transition-all duration-300">
+              <div class="flex justify-between items-start mb-4">
+                <div
+                  class="w-16 h-16 bg-secondary !rounded-full flex items-center justify-center">
+                  <i class="ri-tools-line ri-2x text-primary"></i>
+                </div>
+                <div class="star-rating flex">
+                  <i class="ri-star-fill filled"></i>
+                  <i class="ri-star-fill filled"></i>
+                  <i class="ri-star-fill filled"></i>
+                  <i class="ri-star-line"></i>
+                  <i class="ri-star-line"></i>
+                  <span class="ml-1 text-white">3.7</span>
+                </div>
+              </div>
+              <h3 class="futuristic-font text-xl font-bold mb-2">Handyman</h3>
+              <p class="text-gray-400 mb-4">Versatile professional capable of
+                handling various small to medium repair tasks.</p>
+              <div class="flex justify-between items-center">
+                <span
+                  class="bg-primary bg-opacity-20 text-primary px-3 py-1 !rounded-full text-xs">Intermediate</span>
+                <button
+                  class="text-primary hover:text-white hover:bg-primary !rounded-full w-8 h-8 flex items-center justify-center transition-colors duration-300">
+                  <i class="ri-arrow-right-line"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Statistics Section -->
+    <section class="py-20 bg-black">
+      <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div
+            class="bg-secondary p-8 !rounded-lg text-center border-b-4 border-primary">
+            <div
+              class="w-16 h-16 bg-black !rounded-full flex items-center justify-center mx-auto mb-6">
+              <i class="ri-user-star-line ri-2x text-primary"></i>
+            </div>
+            <h3 class="counter text-4xl font-bold mb-2">15,000+</h3>
+            <p class="text-gray-400">Active Professionals</p>
+          </div>
+          <div
+            class="bg-secondary p-8 !rounded-lg text-center border-b-4 border-primary">
+            <div
+              class="w-16 h-16 bg-black !rounded-full flex items-center justify-center mx-auto mb-6">
+              <i class="ri-check-double-line ri-2x text-primary"></i>
+            </div>
+            <h3 class="counter text-4xl font-bold mb-2">42,800+</h3>
+            <p class="text-gray-400">Completed Projects</p>
+          </div>
+          <div
+            class="bg-secondary p-8 !rounded-lg text-center border-b-4 border-primary">
+            <div
+              class="w-16 h-16 bg-black !rounded-full flex items-center justify-center mx-auto mb-6">
+              <i class="ri-emotion-happy-line ri-2x text-primary"></i>
+            </div>
+            <h3 class="counter text-4xl font-bold mb-2">98%</h3>
+            <p class="text-gray-400">Client Satisfaction</p>
+          </div>
+          <div
+            class="bg-secondary p-8 !rounded-lg text-center border-b-4 border-primary">
+            <div
+              class="w-16 h-16 bg-black !rounded-full flex items-center justify-center mx-auto mb-6">
+              <i class="ri-map-pin-line ri-2x text-primary"></i>
+            </div>
+            <h3 class="counter text-4xl font-bold mb-2">250+</h3>
+            <p class="text-gray-400">Cities Covered</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Testimonials Section -->
+    <section id="testimonials"
+      class="py-20 bg-gradient-to-b from-secondary to-black">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="futuristic-font text-4xl font-bold mb-4">Client <span
+              class="text-primary">Feedback</span></h2>
+          <p class="text-gray-400 max-w-2xl mx-auto">See what our clients have
+            to say about their experiences with professionals on our
+            platform.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+            class="testimonial-card bg-black p-8 !rounded-lg border border-gray-800 relative">
+            <div
+              class="absolute -top-4 -left-4 text-6xl text-primary opacity-20">"</div>
+            <div class="star-rating flex mb-4">
+              <i class="ri-star-fill filled"></i>
+              <i class="ri-star-fill filled"></i>
+              <i class="ri-star-fill filled"></i>
+              <i class="ri-star-fill filled"></i>
+              <i class="ri-star-fill filled"></i>
+            </div>
+            <p class="text-gray-300 mb-6">The platform made it incredibly easy
+              to find a qualified electrician for my home renovation. The
+              professional was punctual, skilled, and completed the work to a
+              high standard. Highly recommend!</p>
+            <div class="flex items-center">
+              <div
+                class="w-12 h-12 bg-secondary !rounded-full flex items-center justify-center mr-4">
+                <i class="ri-user-line text-primary"></i>
+              </div>
+              <div>
+                <h4 class="font-bold">Michael Anderson</h4>
+                <p class="text-gray-500 text-sm">Homeowner, Boston</p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="testimonial-card bg-black p-8 !rounded-lg border border-gray-800 relative">
+            <div
+              class="absolute -top-4 -left-4 text-6xl text-primary opacity-20">"</div>
+            <div class="star-rating flex mb-4">
+              <i class="ri-star-fill filled"></i>
+              <i class="ri-star-fill filled"></i>
+              <i class="ri-star-fill filled"></i>
+              <i class="ri-star-fill filled"></i>
+              <i class="ri-star-half-fill filled"></i>
+            </div>
+            <p class="text-gray-300 mb-6">As a property developer, I needed
+              multiple contractors for a large project. This platform
+              streamlined the entire process, from finding skilled workers to
+              managing payments. Saved me countless hours!</p>
+            <div class="flex items-center">
+              <div
+                class="w-12 h-12 bg-secondary !rounded-full flex items-center justify-center mr-4">
+                <i class="ri-user-line text-primary"></i>
+              </div>
+              <div>
+                <h4 class="font-bold">Jennifer Reynolds</h4>
+                <p class="text-gray-500 text-sm">Property Developer, Chicago</p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="testimonial-card bg-black p-8 !rounded-lg border border-gray-800 relative">
+            <div
+              class="absolute -top-4 -left-4 text-6xl text-primary opacity-20">"</div>
+            <div class="star-rating flex mb-4">
+              <i class="ri-star-fill filled"></i>
+              <i class="ri-star-fill filled"></i>
+              <i class="ri-star-fill filled"></i>
+              <i class="ri-star-fill filled"></i>
+              <i class="ri-star-line"></i>
+            </div>
+            <p class="text-gray-300 mb-6">I joined as a plumber six months ago
+              and have received a steady stream of jobs. The platform handles
+              all the administrative work, allowing me to focus on what I do
+              best. Great for professionals!</p>
+            <div class="flex items-center">
+              <div
+                class="w-12 h-12 bg-secondary !rounded-full flex items-center justify-center mr-4">
+                <i class="ri-user-line text-primary"></i>
+              </div>
+              <div>
+                <h4 class="font-bold">Robert Martinez</h4>
+                <p class="text-gray-500 text-sm">Professional Plumber, San
+                  Diego</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-black">
+      <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div>
+            <h2 class="futuristic-font text-4xl font-bold mb-6">Get In <span
+                class="text-primary">Touch</span></h2>
+            <p class="text-gray-400 mb-8">Have questions about our platform?
+              Want to join as a professional? Reach out to our team and we'll
+              get back to you promptly.</p>
+            <div class="mb-8">
+              <div class="flex items-center mb-4">
+                <div
+                  class="w-10 h-10 bg-secondary !rounded-full flex items-center justify-center mr-4">
+                  <i class="ri-map-pin-line text-primary"></i>
+                </div>
+                <p class="text-gray-300">123 Construction Avenue, New York, NY
+                  10001</p>
+              </div>
+              <div class="flex items-center mb-4">
+                <div
+                  class="w-10 h-10 bg-secondary !rounded-full flex items-center justify-center mr-4">
+                  <i class="ri-mail-line text-primary"></i>
+                </div>
+                <p class="text-gray-300">info@constructconnect.com</p>
+              </div>
+              <div class="flex items-center">
+                <div
+                  class="w-10 h-10 bg-secondary !rounded-full flex items-center justify-center mr-4">
+                  <i class="ri-phone-line text-primary"></i>
+                </div>
+                <p class="text-gray-300">+1 (555) 123-4567</p>
+              </div>
+            </div>
+            <div class="flex space-x-4">
+              <a href="#"
+                class="w-10 h-10 bg-secondary !rounded-full flex items-center justify-center social-icon">
+                <i class="ri-facebook-fill text-white"></i>
+              </a>
+              <a href="#"
+                class="w-10 h-10 bg-secondary !rounded-full flex items-center justify-center social-icon">
+                <i class="ri-twitter-x-fill text-white"></i>
+              </a>
+              <a href="#"
+                class="w-10 h-10 bg-secondary !rounded-full flex items-center justify-center social-icon">
+                <i class="ri-linkedin-fill text-white"></i>
+              </a>
+              <a href="#"
+                class="w-10 h-10 bg-secondary !rounded-full flex items-center justify-center social-icon">
+                <i class="ri-instagram-fill text-white"></i>
+              </a>
+            </div>
+          </div>
+          <div class="bg-secondary p-8 !rounded-lg">
+            <h3 class="futuristic-font text-2xl font-bold mb-6">Send Us a
+              Message</h3>
+            <form>
+              <div class="mb-6">
+                <label for="name" class="block text-gray-400 mb-2">Full
+                  Name</label>
+                <input type="text" id="name"
+                  class="w-full bg-black border-none form-input p-3 !rounded-lg text-white"
+                  placeholder="John Doe">
+              </div>
+              <div class="mb-6">
+                <label for="email" class="block text-gray-400 mb-2">Email
+                  Address</label>
+                <input type="email" id="email"
+                  class="w-full bg-black border-none form-input p-3 !rounded-lg text-white"
+                  placeholder="john@example.com">
+              </div>
+              <div class="mb-6">
+                <label for="subject"
+                  class="block text-gray-400 mb-2">Subject</label>
+                <input type="text" id="subject"
+                  class="w-full bg-black border-none form-input p-3 !rounded-lg text-white"
+                  placeholder="How can we help?">
+              </div>
+              <div class="mb-6">
+                <label for="message"
+                  class="block text-gray-400 mb-2">Message</label>
+                <textarea id="message" rows="4"
+                  class="w-full bg-black border-none form-input p-3 !rounded-lg text-white"
+                  placeholder="Your message here..."></textarea>
+              </div>
+              <div class="mb-6">
+                <label class="custom-checkbox">
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                  <span class="ml-2 text-gray-300">I agree to the terms and
+                    privacy policy</span>
+                </label>
+              </div>
+              <button type="submit"
+                class="w-full bg-primary text-white py-3 !rounded-button font-bold hover:bg-opacity-90 transition-all duration-300 glow-button whitespace-nowrap">Send
+                Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Newsletter Section -->
+    <section class="py-16 bg-secondary">
+      <div class="container mx-auto px-6">
+        <div class="bg-black p-10 !rounded-lg relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-1/3 h-full opacity-10"
+            style="background-image: url('https://public.readdy.ai/ai/img_res/eb919b1074e013aab87133c152d1e5a4.jpg'); background-size: cover;"></div>
+          <div class="relative z-10 max-w-3xl">
+            <h2 class="futuristic-font text-3xl font-bold mb-4">Stay Updated
+              with <span class="text-primary">ConstructConnect</span></h2>
+            <p class="text-gray-400 mb-8">Subscribe to our newsletter to receive
+              the latest updates, industry news, and exclusive offers.</p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <input type="email"
+                class="flex-1 bg-secondary border-none form-input p-4 !rounded-lg text-white"
+                placeholder="Enter your email address">
+              <button
+                class="bg-primary text-white px-8 py-4 !rounded-button font-bold hover:bg-opacity-90 transition-all duration-300 glow-button whitespace-nowrap">
+                <i class="ri-send-plane-line mr-2"></i> Subscribe
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-black pt-16 pb-8">
+      <div class="container mx-auto px-6">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+          <div>
+            <a href="#"
+              class="font-['Pacifico'] text-primary text-3xl mb-6 inline-block">logo</a>
+            <p class="text-gray-400 mb-6">Revolutionizing how construction
+              professionals connect with clients, making project management
+              seamless and efficient.</p>
+            <div class="flex space-x-4">
+              <a href="#"
+                class="w-10 h-10 bg-secondary !rounded-full flex items-center justify-center social-icon">
+                <i class="ri-facebook-fill text-white"></i>
+              </a>
+              <a href="#"
+                class="w-10 h-10 bg-secondary !rounded-full flex items-center justify-center social-icon">
+                <i class="ri-twitter-x-fill text-white"></i>
+              </a>
+              <a href="#"
+                class="w-10 h-10 bg-secondary !rounded-full flex items-center justify-center social-icon">
+                <i class="ri-linkedin-fill text-white"></i>
+              </a>
+              <a href="#"
+                class="w-10 h-10 bg-secondary !rounded-full flex items-center justify-center social-icon">
+                <i class="ri-instagram-fill text-white"></i>
+              </a>
+            </div>
+          </div>
+          <div>
+            <h3 class="futuristic-font text-xl font-bold mb-6">Quick Links</h3>
+            <ul class="space-y-3">
+              <li><a href="#"
+                  class="text-gray-400 hover:text-primary transition-colors duration-300">About
+                  Us</a></li>
+              <li><a href="#"
+                  class="text-gray-400 hover:text-primary transition-colors duration-300">Services</a></li>
+              <li><a href="#"
+                  class="text-gray-400 hover:text-primary transition-colors duration-300">Professionals</a></li>
+              <li><a href="#"
+                  class="text-gray-400 hover:text-primary transition-colors duration-300">Testimonials</a></li>
+              <li><a href="#"
+                  class="text-gray-400 hover:text-primary transition-colors duration-300">Contact
+                  Us</a></li>
+              <li><a href="#"
+                  class="text-gray-400 hover:text-primary transition-colors duration-300">Blog</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="futuristic-font text-xl font-bold mb-6">Our Services</h3>
+            <ul class="space-y-3">
+              <li><a href="#"
+                  class="text-gray-400 hover:text-primary transition-colors duration-300">Electrical
+                  Work</a></li>
+              <li><a href="#"
+                  class="text-gray-400 hover:text-primary transition-colors duration-300">Plumbing</a></li>
+              <li><a href="#"
+                  class="text-gray-400 hover:text-primary transition-colors duration-300">Carpentry</a></li>
+              <li><a href="#"
+                  class="text-gray-400 hover:text-primary transition-colors duration-300">Masonry</a></li>
+              <li><a href="#"
+                  class="text-gray-400 hover:text-primary transition-colors duration-300">Painting</a></li>
+              <li><a href="#"
+                  class="text-gray-400 hover:text-primary transition-colors duration-300">HVAC</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="futuristic-font text-xl font-bold mb-6">Support</h3>
+            <ul class="space-y-3">
+              <li><a href="#"
+                  class="text-gray-400 hover:text-primary transition-colors duration-300">Help
+                  Center</a></li>
+              <li><a href="#"
+                  class="text-gray-400 hover:text-primary transition-colors duration-300">FAQs</a></li>
+              <li><a href="#"
+                  class="text-gray-400 hover:text-primary transition-colors duration-300">Privacy
+                  Policy</a></li>
+              <li><a href="#"
+                  class="text-gray-400 hover:text-primary transition-colors duration-300">Terms
+                  of Service</a></li>
+              <li><a href="#"
+                  class="text-gray-400 hover:text-primary transition-colors duration-300">Careers</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="border-t border-gray-800 pt-8">
+          <div class="flex flex-col md:flex-row justify-between items-center">
+            <p class="text-gray-500 mb-4 md:mb-0">© 2025 ConstructConnect. All
+              rights reserved.</p>
+            <div class="flex space-x-6">
+              <div class="flex items-center">
+                <i class="ri-visa-line ri-lg mr-2 text-gray-400"></i>
+                <i class="ri-mastercard-line ri-lg mr-2 text-gray-400"></i>
+                <i class="ri-paypal-line ri-lg mr-2 text-gray-400"></i>
+                <i class="ri-apple-fill ri-lg text-gray-400"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function(e) {
+e.preventDefault();
+const target = document.querySelector(this.getAttribute('href'));
+if (target) {
+window.scrollTo({
+top: target.offsetTop - 80,
+behavior: 'smooth'
+});
+}
+});
+});
+// Form validation
+const form = document.querySelector('form');
+if (form) {
+form.addEventListener('submit', function(e) {
+e.preventDefault();
+const name = document.getElementById('name').value;
+const email = document.getElementById('email').value;
+const subject = document.getElementById('subject').value;
+const message = document.getElementById('message').value;
+if (!name || !email || !subject || !message) {
+alert('Please fill in all fields');
+return;
+}
+if (!email.includes('@')) {
+alert('Please enter a valid email address');
+return;
+}
+alert('Thank you for your message! We will get back to you soon.');
+form.reset();
+});
+}
+// Mobile menu toggle
+const menuButton = document.querySelector('.md\\:hidden');
+if (menuButton) {
+menuButton.addEventListener('click', function() {
+const mobileMenu = document.createElement('div');
+mobileMenu.className = 'fixed inset-0 bg-black bg-opacity-95 z-50 flex flex-col items-center justify-center';
+mobileMenu.innerHTML = `
+<button class="absolute top-6 right-6 text-white">
+<i class="ri-close-line ri-2x"></i>
+</button>
+<nav class="flex flex-col space-y-6 text-center">
+<a href="#home" class="text-white text-xl hover:text-primary transition-colors duration-300">Home</a>
+<a href="#how-it-works" class="text-white text-xl hover:text-primary transition-colors duration-300">How It Works</a>
+<a href="#services" class="text-white text-xl hover:text-primary transition-colors duration-300">Services</a>
+<a href="#professionals" class="text-white text-xl hover:text-primary transition-colors duration-300">Professionals</a>
+<a href="#testimonials" class="text-white text-xl hover:text-primary transition-colors duration-300">Testimonials</a>
+<a href="#contact" class="text-white text-xl hover:text-primary transition-colors duration-300">Contact</a>
+</nav>
+<div class="mt-10 flex space-x-4">
+<button id="mobileLoginBtn" class="bg-transparent border border-primary text-primary px-6 py-2 !rounded-button hover:bg-primary hover:text-white transition-all duration-300 whitespace-nowrap">Log In</button>
+<button class="bg-primary text-white px-6 py-2 !rounded-button glow-button whitespace-nowrap">Register</button>
+</div>
+`;
+document.body.appendChild(mobileMenu);
+document.body.style.overflow = 'hidden';
+const closeButton = mobileMenu.querySelector('button');
+closeButton.addEventListener('click', function() {
+document.body.removeChild(mobileMenu);
+document.body.style.overflow = '';
+});
+mobileMenu.querySelectorAll('a').forEach(link => {
+link.addEventListener('click', function() {
+document.body.removeChild(mobileMenu);
+document.body.style.overflow = '';
+});
+});
+// Add event listener to mobile login button
+const mobileLoginBtn = mobileMenu.querySelector('#mobileLoginBtn');
+if (mobileLoginBtn) {
+mobileLoginBtn.addEventListener('click', function() {
+document.body.removeChild(mobileMenu);
+document.body.style.overflow = '';
+showLoginModal();
+});
+}
+});
+}
+// Login Modal Functionality
+function showLoginModal() {
+// Create modal container
+const modalContainer = document.createElement('div');
+modalContainer.className = 'fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50';
+modalContainer.id = 'loginModal';
+// Create modal content
+modalContainer.innerHTML = `
+<div class="bg-secondary !rounded-lg w-full max-w-md p-8 relative animate-fadeIn"
+style="animation: fadeIn 0.3s ease-out;">
+<button id="closeLoginModal" class="absolute top-4 right-4 text-gray-400 hover:text-white">
+<i class="ri-close-line ri-lg"></i>
+</button>
+<h2 class="futuristic-font text-2xl font-bold mb-6 text-white text-center">Log In to <span class="text-primary">ConstructConnect</span></h2>
+<form id="loginForm" class="space-y-6">
+<div>
+<label for="loginEmail" class="block text-gray-400 mb-2">Email / Username</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<i class="ri-user-line text-gray-500"></i>
+</div>
+<input type="text" id="loginEmail" class="w-full bg-black border-none form-input p-3 pl-10 !rounded-lg text-white" placeholder="Enter your email or username">
+</div>
+</div>
+<div>
+<label for="loginPassword" class="block text-gray-400 mb-2">Password</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<i class="ri-lock-line text-gray-500"></i>
+</div>
+<input type="password" id="loginPassword" class="w-full bg-black border-none form-input p-3 pl-10 !rounded-lg text-white" placeholder="Enter your password">
+</div>
+</div>
+<div class="flex items-center justify-between">
+<label class="custom-checkbox">
+<input type="checkbox" id="rememberMe">
+<span class="checkmark"></span>
+<span class="ml-2 text-gray-300 text-sm">Remember me</span>
+</label>
+<a href="#" class="text-primary text-sm hover:underline">Forgot password?</a>
+</div>
+<button type="submit" class="w-full bg-primary text-white py-3 !rounded-button font-bold hover:bg-opacity-90 transition-all duration-300 glow-button whitespace-nowrap">
+Log In
+</button>
+<div class="text-center text-gray-400 text-sm">
+Don't have an account? <a href="#" class="text-primary hover:underline">Register now</a>
+</div>
+</form>
+</div>
+`;
+// Add modal to body
+document.body.appendChild(modalContainer);
+document.body.style.overflow = 'hidden';
+// Add event listener to close button
+const closeButton = document.getElementById('closeLoginModal');
+closeButton.addEventListener('click', closeLoginModal);
+// Close modal when clicking outside
+modalContainer.addEventListener('click', function(e) {
+if (e.target === modalContainer) {
+closeLoginModal();
+}
+});
+// Handle form submission
+const loginForm = document.getElementById('loginForm');
+loginForm.addEventListener('submit', function(e) {
+e.preventDefault();
+const email = document.getElementById('loginEmail').value;
+const password = document.getElementById('loginPassword').value;
+if (!email || !password) {
+showNotification('Please fill in all fields', 'error');
+return;
+}
+// Here you would typically send the login data to your server
+// For demo purposes, we'll just show a success message
+showNotification('Login successful!', 'success');
+closeLoginModal();
+});
+}
+function closeLoginModal() {
+const modal = document.getElementById('loginModal');
+if (modal) {
+modal.classList.add('animate-fadeOut');
+setTimeout(() => {
+document.body.removeChild(modal);
+document.body.style.overflow = '';
+}, 300);
+}
+}
+function showNotification(message, type) {
+// Create notification element
+const notification = document.createElement('div');
+notification.className = fixed bottom-4 right-4 p-4 !rounded-lg text-white font-medium shadow-lg z-50 animate-slideIn ${type === 'error' ? 'bg-red-600' : 'bg-green-600'};
+notification.style.animation = 'slideIn 0.3s ease-out';
+notification.innerHTML = message;
+// Add to body
+document.body.appendChild(notification);
+// Remove after 3 seconds
+setTimeout(() => {
+notification.style.animation = 'slideOut 0.3s ease-out';
+setTimeout(() => {
+document.body.removeChild(notification);
+}, 300);
+}, 3000);
+}
+// Add event listener to login button
+document.addEventListener('DOMContentLoaded', function() {
+const loginBtn = document.getElementById('loginBtn');
+if (loginBtn) {
+loginBtn.addEventListener('click', showLoginModal);
+}
+});
+// Add CSS animations
+const style = document.createElement('style');
+style.textContent = `
+@keyframes fadeIn {
+from { opacity: 0; transform: scale(0.95); }
+to { opacity: 1; transform: scale(1); }
+}
+@keyframes fadeOut {
+from { opacity: 1; transform: scale(1); }
+to { opacity: 0; transform: scale(0.95); }
+}
+@keyframes slideIn {
+from { transform: translateX(100%); opacity: 0; }
+to { transform: translateX(0); opacity: 1; }
+}
+@keyframes slideOut {
+from { transform: translateX(0); opacity: 1; }
+to { transform: translateX(100%); opacity: 0; }
+}
+.animate-fadeIn {
+animation: fadeIn 0.3s ease-out;
+}
+.animate-fadeOut {
+animation: fadeOut 0.3s ease-out;
+}
+.animate-slideIn {
+animation: slideIn 0.3s ease-out;
+}
+.animate-slideOut {
+animation: slideOut 0.3s ease-out;
+}
+`;
+document.head.appendChild(style);
+
+// Carousel functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const carousel = document.getElementById('carousel');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  const indicators = document.querySelectorAll('.carousel-indicator');
+  
+  let currentSlide = 0;
+  const slideCount = 3; // Number of slides
+  
+  // Initialize carousel
+  updateCarousel();
+  
+  // Event listeners for buttons
+  prevBtn.addEventListener('click', function() {
+    currentSlide = (currentSlide - 1 + slideCount) % slideCount;
+    updateCarousel();
+  });
+  
+  nextBtn.addEventListener('click', function() {
+    currentSlide = (currentSlide + 1) % slideCount;
+    updateCarousel();
+  });
+  
+  // Event listeners for indicators
+  indicators.forEach((indicator, index) => {
+    indicator.addEventListener('click', function() {
+      currentSlide = index;
+      updateCarousel();
+    });
+  });
+  
+  // Auto-advance carousel
+  let carouselInterval = setInterval(function() {
+    currentSlide = (currentSlide + 1) % slideCount;
+    updateCarousel();
+  }, 5000);
+  
+  // Pause auto-advance on hover
+  carousel.parentElement.addEventListener('mouseenter', function() {
+    clearInterval(carouselInterval);
+  });
+  
+  carousel.parentElement.addEventListener('mouseleave', function() {
+    carouselInterval = setInterval(function() {
+      currentSlide = (currentSlide + 1) % slideCount;
+      updateCarousel();
+    }, 5000);
+  });
+  
+  // Update carousel position and indicators
+  function updateCarousel() {
+    carousel.style.transform = translateX(-${currentSlide * 100}%);
+    
+    // Update indicators
+    indicators.forEach((indicator, index) => {
+      if (index === currentSlide) {
+        indicator.classList.add('bg-primary');
+        indicator.classList.remove('bg-gray-600');
+      } else {
+        indicator.classList.add('bg-gray-600');
+        indicator.classList.remove('bg-primary');
+      }
+    });
+  }
+});
+</script>
+  </body>
+</html>

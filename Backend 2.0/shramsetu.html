@@ -1,0 +1,1559 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shram Setu - Connect with Construction Professionals</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#CC0000", secondary: "#FFD700" },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <style>
+      :where([class^="ri-"])::before { content: "\f3c2"; }
+      body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #121212;
+      color: #f5f5f5;
+      }
+      .hero-bg {
+      background-image: linear-gradient(to right, rgba(18, 18, 18, 0.9), rgba(18, 18, 18, 0.7)), url('https://public.readdy.ai/ai/img_res/9e4c7413d00bf6e110e3b11474311f9c.jpg');
+      background-size: cover;
+      background-position: center;
+      }
+      .category-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(204, 0, 0, 0.2);
+      }
+      .custom-checkbox {
+      display: inline-block;
+      position: relative;
+      cursor: pointer;
+      }
+      .custom-checkbox input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      }
+      .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 20px;
+      width: 20px;
+      background-color: #2b2b2b;
+      border-radius: 4px;
+      }
+      .custom-checkbox:hover input ~ .checkmark {
+      background-color: #3b3b3b;
+      }
+      .custom-checkbox input:checked ~ .checkmark {
+      background-color: #CC0000;
+      }
+      .checkmark:after {
+      content: "";
+      position: absolute;
+      display: none;
+      }
+      .custom-checkbox input:checked ~ .checkmark:after {
+      display: block;
+      }
+      .custom-checkbox .checkmark:after {
+      left: 7px;
+      top: 3px;
+      width: 6px;
+      height: 12px;
+      border: solid white;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+      }
+      .custom-range {
+      --webkit-appearance: none;
+      width: 100%;
+      height: 6px;
+      background: #2b2b2b;
+      border-radius: 5px;
+      outline: none;
+      }
+      .custom-range::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 18px;
+      height: 18px;
+      background: #CC0000;
+      border-radius: 50%;
+      cursor: pointer;
+      }
+      .custom-range::-moz-range-thumb {
+      width: 18px;
+      height: 18px;
+      background: #CC0000;
+      border-radius: 50%;
+      cursor: pointer;
+      border: none;
+      }
+      .custom-switch {
+      position: relative;
+      display: inline-block;
+      width: 46px;
+      height: 24px;
+      }
+      .custom-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+      }
+      .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #2b2b2b;
+      transition: .4s;
+      border-radius: 24px;
+      }
+      .slider:before {
+      position: absolute;
+      content: "";
+      height: 18px;
+      width: 18px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: .4s;
+      border-radius: 50%;
+      }
+      input:checked + .slider {
+      background-color: #CC0000;
+      }
+      input:checked + .slider:before {
+      transform: translateX(22px);
+      }
+      .tab-active {
+      background-color: #CC0000;
+      color: white;
+      }
+      .carousel-container {
+      overflow: hidden;
+      position: relative;
+      }
+      .carousel-slide {
+      display: none;
+      animation: fade 1.5s ease;
+      }
+      .carousel-slide.active {
+      display: block;
+      }
+      @keyframes fade {
+      from {opacity: 0.7}
+      to {opacity: 1}
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="bg-[#1A1A1A] sticky top-0 z-50">
+      <div class="container mx-auto px-4 py-3">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center">
+            <h1 class="text-2xl font-['Pacifico'] text-white mr-8">
+              Shram Setu
+            </h1>
+            <nav class="hidden md:flex space-x-6">
+              <a
+                href="#"
+                class="text-white hover:text-secondary transition-colors"
+                >Home</a
+              >
+              <a
+                href="#"
+                class="text-white hover:text-secondary transition-colors"
+                >Services</a
+              >
+              <a
+                href="#"
+                class="text-white hover:text-secondary transition-colors"
+                >Find Professionals</a
+              >
+              <a
+                href="#"
+                class="text-white hover:text-secondary transition-colors"
+                >Career</a
+              >
+              <a
+                href="#"
+                class="text-white hover:text-secondary transition-colors"
+                >Contact Us</a
+              >
+            </nav>
+          </div>
+          <div class="flex items-center space-x-4">
+            <button
+              id="loginBtn"
+              class="bg-secondary text-[#1A1A1A] px-4 py-2 font-medium !rounded-button whitespace-nowrap"
+            >
+              Login
+            </button>
+            <!-- Login Modal -->
+            <div id="loginModal" class="fixed inset-0 z-50 hidden">
+              <div
+                class="fixed inset-0 bg-black bg-opacity-50 transition-opacity"
+              ></div>
+              <div class="fixed inset-0 flex items-center justify-center p-4">
+                <div
+                  class="bg-[#1A1A1A] rounded-lg w-full max-w-md p-8 relative"
+                >
+                  <button
+                    id="closeLoginModal"
+                    class="absolute right-4 top-4 text-gray-400 hover:text-white"
+                  >
+                    <i class="ri-close-line ri-xl"></i>
+                  </button>
+                  <h2 class="text-2xl font-semibold mb-6 text-white">
+                    Login to Shram Setu
+                  </h2>
+                  <form id="loginForm" class="space-y-6">
+                    <div>
+                      <label class="block text-gray-300 mb-2"
+                        >Email or Phone</label
+                      >
+                      <input
+                        type="text"
+                        id="loginEmail"
+                        class="w-full px-4 py-3 bg-[#2b2b2b] border-none rounded text-white"
+                        placeholder="Enter your email or phone"
+                      />
+                    </div>
+                    <div>
+                      <label class="block text-gray-300 mb-2">Password</label>
+                      <input
+                        type="password"
+                        id="loginPassword"
+                        class="w-full px-4 py-3 bg-[#2b2b2b] border-none rounded text-white"
+                        placeholder="Enter your password"
+                      />
+                    </div>
+                    <div class="flex items-center justify-between">
+                      <label
+                        class="custom-checkbox pl-8 relative text-gray-300"
+                      >
+                        <input type="checkbox" id="rememberMe" />
+                        <span class="checkmark"></span>
+                        Remember me
+                      </label>
+                      <a href="#" class="text-primary hover:text-primary/80"
+                        >Forgot password?</a
+                      >
+                    </div>
+                    <button
+                      type="submit"
+                      class="w-full bg-primary text-white px-4 py-3 font-medium !rounded-button whitespace-nowrap"
+                    >
+                      Login
+                    </button>
+                  </form>
+                  <div class="relative my-6">
+                    <div class="absolute inset-0 flex items-center">
+                      <div class="w-full border-t border-gray-600"></div>
+                    </div>
+                    <div class="relative flex justify-center">
+                      <span class="bg-[#1A1A1A] px-4 text-sm text-gray-400"
+                        >Or continue with</span
+                      >
+                    </div>
+                  </div>
+                  <div class="grid grid-cols-3 gap-4 mb-6">
+                    <button
+                      class="flex items-center justify-center bg-[#2b2b2b] hover:bg-[#363636] text-white px-4 py-3 rounded transition-colors"
+                    >
+                      <i class="ri-google-fill ri-lg"></i>
+                    </button>
+                    <button
+                      class="flex items-center justify-center bg-[#2b2b2b] hover:bg-[#363636] text-white px-4 py-3 rounded transition-colors"
+                    >
+                      <i class="ri-facebook-fill ri-lg"></i>
+                    </button>
+                    <button
+                      class="flex items-center justify-center bg-[#2b2b2b] hover:bg-[#363636] text-white px-4 py-3 rounded transition-colors"
+                    >
+                      <i class="ri-apple-fill ri-lg"></i>
+                    </button>
+                  </div>
+                  <p class="text-center text-gray-400">
+                    Don't have an account?
+                    <a href="#" class="text-primary hover:text-primary/80"
+                      >Register here</a
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+            <button
+              class="bg-primary text-white px-4 py-2 font-medium !rounded-button whitespace-nowrap"
+            >
+              Register
+            </button>
+            <div class="w-10 h-10 flex items-center justify-center md:hidden">
+              <i class="ri-menu-line text-white ri-2x"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Hero Section -->
+    <section class="hero-bg py-20">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row items-center w-full">
+          <div class="md:w-1/2 mb-10 md:mb-0">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6 text-white">
+              Connect with Construction Professionals
+              <span class="text-secondary">On Demand</span>
+            </h1>
+            <p class="text-lg mb-8 text-gray-300">
+              Find skilled construction professionals for your project or offer
+              your expertise on India's premier construction marketplace.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 mb-8">
+              <button
+                class="bg-primary text-white px-6 py-3 font-medium !rounded-button whitespace-nowrap"
+              >
+                <i class="ri-user-search-line mr-2"></i> Hire Professionals
+              </button>
+              <button
+                class="bg-[#2b2b2b] text-white border border-secondary px-6 py-3 font-medium !rounded-button whitespace-nowrap"
+              >
+                <i class="ri-user-add-line mr-2"></i> Join as Professional
+              </button>
+            </div>
+            <div class="bg-[#1A1A1A] p-4 rounded-lg">
+              <div class="flex flex-col sm:flex-row gap-3">
+                <div class="flex-1 relative">
+                  <div
+                    class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"
+                  >
+                    <i class="ri-search-line text-gray-400"></i>
+                  </div>
+                  <input
+                    type="text"
+                    class="w-full pl-10 pr-3 py-3 bg-[#2b2b2b] border-none rounded text-white"
+                    placeholder="What service do you need?"
+                  />
+                </div>
+                <div class="flex-1 relative">
+                  <div
+                    class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"
+                  >
+                    <i class="ri-map-pin-line text-gray-400"></i>
+                  </div>
+                  <input
+                    type="text"
+                    class="w-full pl-10 pr-3 py-3 bg-[#2b2b2b] border-none rounded text-white"
+                    placeholder="Your location"
+                  />
+                </div>
+                <button
+                  class="bg-primary text-white px-6 py-3 font-medium !rounded-button whitespace-nowrap"
+                >
+                  Search
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="md:w-1/2 flex justify-center">
+            <div
+              class="carousel-container w-full max-w-lg rounded-lg overflow-hidden"
+            >
+              <div class="carousel-slide active">
+                <img
+                  src="https://public.readdy.ai/ai/img_res/aca7c2445100ad03aeb1aa7cbd56b703.jpg"
+                  alt="Construction Team"
+                  class="w-full h-auto rounded-lg"
+                />
+              </div>
+              <div class="carousel-slide">
+                <img
+                  src="https://public.readdy.ai/ai/img_res/afc7eec0a40e55eadd65f9f9dba65eb3.jpg"
+                  alt="Architect Consultation"
+                  class="w-full h-auto rounded-lg"
+                />
+              </div>
+              <div class="carousel-slide">
+                <img
+                  src="https://public.readdy.ai/ai/img_res/1ad72481a1a2a6dfbb9f3333e3b2a65e.jpg"
+                  alt="Electricians Working"
+                  class="w-full h-auto rounded-lg"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Professional Categories -->
+    <section class="py-16 bg-[#1A1A1A]">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold mb-3">
+            Find Professionals by Category
+          </h2>
+          <p class="text-gray-400">
+            Browse through our extensive network of verified construction
+            professionals
+          </p>
+        </div>
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+        >
+          <!-- Category 1 -->
+          <div
+            class="category-card bg-[#2b2b2b] rounded-lg p-6 transition-all duration-300"
+          >
+            <div
+              class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-4"
+            >
+              <i class="ri-building-line text-primary ri-2x"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Architects</h3>
+            <p class="text-gray-400 mb-3">120+ professionals available</p>
+            <div class="flex items-center text-yellow-400 mb-4">
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-half-fill"></i>
+              <span class="ml-2 text-gray-300">(4.8)</span>
+            </div>
+            <a href="#" class="text-secondary flex items-center">
+              View Professionals <i class="ri-arrow-right-line ml-1"></i>
+            </a>
+          </div>
+          <!-- Category 2 -->
+          <div
+            class="category-card bg-[#2b2b2b] rounded-lg p-6 transition-all duration-300"
+          >
+            <div
+              class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-4"
+            >
+              <i class="ri-hammer-line text-primary ri-2x"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Civil Engineers</h3>
+            <p class="text-gray-400 mb-3">85+ professionals available</p>
+            <div class="flex items-center text-yellow-400 mb-4">
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-line"></i>
+              <span class="ml-2 text-gray-300">(4.2)</span>
+            </div>
+            <a href="#" class="text-secondary flex items-center">
+              View Professionals <i class="ri-arrow-right-line ml-1"></i>
+            </a>
+          </div>
+          <!-- Category 3 -->
+          <div
+            class="category-card bg-[#2b2b2b] rounded-lg p-6 transition-all duration-300"
+          >
+            <div
+              class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-4"
+            >
+              <i class="ri-tools-line text-primary ri-2x"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Contractors</h3>
+            <p class="text-gray-400 mb-3">210+ professionals available</p>
+            <div class="flex items-center text-yellow-400 mb-4">
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <span class="ml-2 text-gray-300">(4.9)</span>
+            </div>
+            <a href="#" class="text-secondary flex items-center">
+              View Professionals <i class="ri-arrow-right-line ml-1"></i>
+            </a>
+          </div>
+          <!-- Category 4 -->
+          <div
+            class="category-card bg-[#2b2b2b] rounded-lg p-6 transition-all duration-300"
+          >
+            <div
+              class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-4"
+            >
+              <i class="ri-flashlight-line text-primary ri-2x"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Electricians</h3>
+            <p class="text-gray-400 mb-3">150+ professionals available</p>
+            <div class="flex items-center text-yellow-400 mb-4">
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-line"></i>
+              <span class="ml-2 text-gray-300">(4.0)</span>
+            </div>
+            <a href="#" class="text-secondary flex items-center">
+              View Professionals <i class="ri-arrow-right-line ml-1"></i>
+            </a>
+          </div>
+          <!-- Category 5 -->
+          <div
+            class="category-card bg-[#2b2b2b] rounded-lg p-6 transition-all duration-300"
+          >
+            <div
+              class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-4"
+            >
+              <i class="ri-drop-line text-primary ri-2x"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Plumbers</h3>
+            <p class="text-gray-400 mb-3">95+ professionals available</p>
+            <div class="flex items-center text-yellow-400 mb-4">
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-half-fill"></i>
+              <span class="ml-2 text-gray-300">(4.5)</span>
+            </div>
+            <a href="#" class="text-secondary flex items-center">
+              View Professionals <i class="ri-arrow-right-line ml-1"></i>
+            </a>
+          </div>
+          <!-- Category 6 -->
+          <div
+            class="category-card bg-[#2b2b2b] rounded-lg p-6 transition-all duration-300"
+          >
+            <div
+              class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-4"
+            >
+              <i class="ri-paint-brush-line text-primary ri-2x"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Painters</h3>
+            <p class="text-gray-400 mb-3">80+ professionals available</p>
+            <div class="flex items-center text-yellow-400 mb-4">
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-line"></i>
+              <span class="ml-2 text-gray-300">(4.1)</span>
+            </div>
+            <a href="#" class="text-secondary flex items-center">
+              View Professionals <i class="ri-arrow-right-line ml-1"></i>
+            </a>
+          </div>
+          <!-- Category 7 -->
+          <div
+            class="category-card bg-[#2b2b2b] rounded-lg p-6 transition-all duration-300"
+          >
+            <div
+              class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-4"
+            >
+              <i class="ri-ruler-line text-primary ri-2x"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Interior Designers</h3>
+            <p class="text-gray-400 mb-3">65+ professionals available</p>
+            <div class="flex items-center text-yellow-400 mb-4">
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-half-fill"></i>
+              <span class="ml-2 text-gray-300">(4.7)</span>
+            </div>
+            <a href="#" class="text-secondary flex items-center">
+              View Professionals <i class="ri-arrow-right-line ml-1"></i>
+            </a>
+          </div>
+          <!-- Category 8 -->
+          <div
+            class="category-card bg-[#2b2b2b] rounded-lg p-6 transition-all duration-300"
+          >
+            <div
+              class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-4"
+            >
+              <i class="ri-home-gear-line text-primary ri-2x"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">HVAC Technicians</h3>
+            <p class="text-gray-400 mb-3">55+ professionals available</p>
+            <div class="flex items-center text-yellow-400 mb-4">
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-line"></i>
+              <span class="ml-2 text-gray-300">(4.3)</span>
+            </div>
+            <a href="#" class="text-secondary flex items-center">
+              View Professionals <i class="ri-arrow-right-line ml-1"></i>
+            </a>
+          </div>
+        </div>
+        <div class="text-center mt-10">
+          <button
+            class="bg-[#2b2b2b] text-white px-6 py-3 font-medium !rounded-button whitespace-nowrap"
+          >
+            View All Categories <i class="ri-arrow-right-line ml-1"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+    <!-- Professional Listing Section -->
+    <section class="py-16 bg-[#121212]">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold mb-3">Top Rated Professionals</h2>
+          <p class="text-gray-400">
+            Find the perfect professional for your construction project
+          </p>
+        </div>
+        <div class="flex flex-col lg:flex-row gap-8">
+          <!-- Filter Sidebar -->
+          <div class="lg:w-1/4">
+            <div class="bg-[#1A1A1A] rounded-lg p-6">
+              <h3 class="text-xl font-semibold mb-6">Filters</h3>
+              <!-- Experience Level -->
+              <div class="mb-6">
+                <h4 class="font-medium mb-3">Experience Level</h4>
+                <div class="space-y-3">
+                  <div class="flex items-center">
+                    <label class="custom-checkbox pl-8 relative">
+                      <input type="checkbox" checked />
+                      <span class="checkmark"></span>
+                      Expert (10+ years)
+                    </label>
+                  </div>
+                  <div class="flex items-center">
+                    <label class="custom-checkbox pl-8 relative">
+                      <input type="checkbox" checked />
+                      <span class="checkmark"></span>
+                      Average (3-10 years)
+                    </label>
+                  </div>
+                  <div class="flex items-center">
+                    <label class="custom-checkbox pl-8 relative">
+                      <input type="checkbox" />
+                      <span class="checkmark"></span>
+                      Fresher (0-3 years)
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <!-- Rating Filter -->
+              <div class="mb-6">
+                <h4 class="font-medium mb-3">Minimum Rating</h4>
+                <div class="flex items-center space-x-2 text-yellow-400">
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-line"></i>
+                  <span class="text-white ml-2">4.0+</span>
+                </div>
+                <input
+                  type="range"
+                  min="1"
+                  max="5"
+                  step="0.5"
+                  value="4"
+                  class="custom-range mt-2"
+                />
+              </div>
+              <!-- Price Range -->
+              <div class="mb-6">
+                <h4 class="font-medium mb-3">Price Range (₹/hr)</h4>
+                <div class="flex justify-between mb-2">
+                  <span>₹500</span>
+                  <span>₹5000</span>
+                </div>
+                <input
+                  type="range"
+                  min="500"
+                  max="5000"
+                  step="100"
+                  value="2000"
+                  class="custom-range"
+                />
+              </div>
+              <!-- Availability -->
+              <div class="mb-6">
+                <h4 class="font-medium mb-3">Availability</h4>
+                <div class="flex items-center justify-between">
+                  <span>Available Now</span>
+                  <label class="custom-switch">
+                    <input type="checkbox" checked />
+                    <span class="slider"></span>
+                  </label>
+                </div>
+              </div>
+              <!-- Apply Filters -->
+              <button
+                class="w-full bg-primary text-white px-4 py-3 font-medium !rounded-button whitespace-nowrap"
+              >
+                Apply Filters
+              </button>
+            </div>
+          </div>
+          <!-- Professional Cards -->
+          <div class="lg:w-3/4">
+            <div class="flex justify-between items-center mb-6">
+              <div class="flex space-x-2">
+                <button class="px-4 py-2 bg-[#2b2b2b] text-white rounded-full">
+                  All
+                </button>
+                <button class="px-4 py-2 bg-primary text-white rounded-full">
+                  Architects
+                </button>
+                <button class="px-4 py-2 bg-[#2b2b2b] text-white rounded-full">
+                  Engineers
+                </button>
+                <button class="px-4 py-2 bg-[#2b2b2b] text-white rounded-full">
+                  Contractors
+                </button>
+              </div>
+              <div class="flex items-center">
+                <span class="mr-2">Sort by:</span>
+                <select
+                  class="bg-[#2b2b2b] text-white border-none rounded px-3 py-2 pr-8 appearance-none"
+                >
+                  <option>Rating: High to Low</option>
+                  <option>Price: Low to High</option>
+                  <option>Experience: High to Low</option>
+                </select>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <!-- Professional 1 -->
+              <div class="bg-[#1A1A1A] rounded-lg overflow-hidden">
+                <div class="flex">
+                  <div class="w-1/3">
+                    <img
+                      src="https://public.readdy.ai/ai/img_res/baddede9db43d0c534b9886611d57ccb.jpg"
+                      alt="Architect"
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div class="w-2/3 p-5">
+                    <div class="flex justify-between items-start">
+                      <div>
+                        <h3 class="text-xl font-semibold">Rajiv Sharma</h3>
+                        <p class="text-gray-400">Senior Architect</p>
+                      </div>
+                      <span
+                        class="bg-secondary text-[#1A1A1A] px-2 py-1 rounded text-sm font-medium"
+                        >Expert</span
+                      >
+                    </div>
+                    <div class="flex items-center mt-2 text-yellow-400">
+                      <i class="ri-star-fill"></i>
+                      <i class="ri-star-fill"></i>
+                      <i class="ri-star-fill"></i>
+                      <i class="ri-star-fill"></i>
+                      <i class="ri-star-half-fill"></i>
+                      <span class="ml-2 text-white">(4.8)</span>
+                      <span class="ml-2 text-gray-400">128 reviews</span>
+                    </div>
+                    <div class="mt-3">
+                      <p class="text-sm text-gray-300">
+                        15+ years experience in residential and commercial
+                        architecture
+                      </p>
+                      <p class="text-primary font-medium mt-2">₹2,500/hr</p>
+                    </div>
+                    <div class="mt-4 flex space-x-3">
+                      <button
+                        class="bg-primary text-white px-4 py-2 !rounded-button whitespace-nowrap flex-1"
+                      >
+                        Book Now
+                      </button>
+                      <button
+                        class="bg-[#2b2b2b] text-white px-3 py-2 !rounded-button whitespace-nowrap"
+                      >
+                        <i class="ri-chat-1-line"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Professional 2 -->
+              <div class="bg-[#1A1A1A] rounded-lg overflow-hidden">
+                <div class="flex">
+                  <div class="w-1/3">
+                    <img
+                      src="https://public.readdy.ai/ai/img_res/5f5b61fda8659e0411dd396a1b4a7167.jpg"
+                      alt="Civil Engineer"
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div class="w-2/3 p-5">
+                    <div class="flex justify-between items-start">
+                      <div>
+                        <h3 class="text-xl font-semibold">Priya Patel</h3>
+                        <p class="text-gray-400">Civil Engineer</p>
+                      </div>
+                      <span
+                        class="bg-secondary text-[#1A1A1A] px-2 py-1 rounded text-sm font-medium"
+                        >Expert</span
+                      >
+                    </div>
+                    <div class="flex items-center mt-2 text-yellow-400">
+                      <i class="ri-star-fill"></i>
+                      <i class="ri-star-fill"></i>
+                      <i class="ri-star-fill"></i>
+                      <i class="ri-star-fill"></i>
+                      <i class="ri-star-fill"></i>
+                      <span class="ml-2 text-white">(4.9)</span>
+                      <span class="ml-2 text-gray-400">96 reviews</span>
+                    </div>
+                    <div class="mt-3">
+                      <p class="text-sm text-gray-300">
+                        12+ years experience in structural engineering and
+                        project management
+                      </p>
+                      <p class="text-primary font-medium mt-2">₹2,200/hr</p>
+                    </div>
+                    <div class="mt-4 flex space-x-3">
+                      <button
+                        class="bg-primary text-white px-4 py-2 !rounded-button whitespace-nowrap flex-1"
+                      >
+                        Book Now
+                      </button>
+                      <button
+                        class="bg-[#2b2b2b] text-white px-3 py-2 !rounded-button whitespace-nowrap"
+                      >
+                        <i class="ri-chat-1-line"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Professional 3 -->
+              <div class="bg-[#1A1A1A] rounded-lg overflow-hidden">
+                <div class="flex">
+                  <div class="w-1/3">
+                    <img
+                      src="https://public.readdy.ai/ai/img_res/5c59ea7e89a6603e303c125f0d2dbfd4.jpg"
+                      alt="Contractor"
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div class="w-2/3 p-5">
+                    <div class="flex justify-between items-start">
+                      <div>
+                        <h3 class="text-xl font-semibold">Vikram Singh</h3>
+                        <p class="text-gray-400">General Contractor</p>
+                      </div>
+                      <span
+                        class="bg-primary/20 text-primary px-2 py-1 rounded text-sm font-medium"
+                        >Average</span
+                      >
+                    </div>
+                    <div class="flex items-center mt-2 text-yellow-400">
+                      <i class="ri-star-fill"></i>
+                      <i class="ri-star-fill"></i>
+                      <i class="ri-star-fill"></i>
+                      <i class="ri-star-fill"></i>
+                      <i class="ri-star-line"></i>
+                      <span class="ml-2 text-white">(4.2)</span>
+                      <span class="ml-2 text-gray-400">75 reviews</span>
+                    </div>
+                    <div class="mt-3">
+                      <p class="text-sm text-gray-300">
+                        8+ years experience in residential construction projects
+                      </p>
+                      <p class="text-primary font-medium mt-2">₹1,800/hr</p>
+                    </div>
+                    <div class="mt-4 flex space-x-3">
+                      <button
+                        class="bg-primary text-white px-4 py-2 !rounded-button whitespace-nowrap flex-1"
+                      >
+                        Book Now
+                      </button>
+                      <button
+                        class="bg-[#2b2b2b] text-white px-3 py-2 !rounded-button whitespace-nowrap"
+                      >
+                        <i class="ri-chat-1-line"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Professional 4 -->
+              <div class="bg-[#1A1A1A] rounded-lg overflow-hidden">
+                <div class="flex">
+                  <div class="w-1/3">
+                    <img
+                      src="https://public.readdy.ai/ai/img_res/1b006c76aaf699099b5ff7b8d209de81.jpg"
+                      alt="Electrician"
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div class="w-2/3 p-5">
+                    <div class="flex justify-between items-start">
+                      <div>
+                        <h3 class="text-xl font-semibold">Arun Kumar</h3>
+                        <p class="text-gray-400">Master Electrician</p>
+                      </div>
+                      <span
+                        class="bg-secondary text-[#1A1A1A] px-2 py-1 rounded text-sm font-medium"
+                        >Expert</span
+                      >
+                    </div>
+                    <div class="flex items-center mt-2 text-yellow-400">
+                      <i class="ri-star-fill"></i>
+                      <i class="ri-star-fill"></i>
+                      <i class="ri-star-fill"></i>
+                      <i class="ri-star-fill"></i>
+                      <i class="ri-star-half-fill"></i>
+                      <span class="ml-2 text-white">(4.7)</span>
+                      <span class="ml-2 text-gray-400">112 reviews</span>
+                    </div>
+                    <div class="mt-3">
+                      <p class="text-sm text-gray-300">
+                        14+ years experience in commercial and residential
+                        electrical work
+                      </p>
+                      <p class="text-primary font-medium mt-2">₹1,500/hr</p>
+                    </div>
+                    <div class="mt-4 flex space-x-3">
+                      <button
+                        class="bg-primary text-white px-4 py-2 !rounded-button whitespace-nowrap flex-1"
+                      >
+                        Book Now
+                      </button>
+                      <button
+                        class="bg-[#2b2b2b] text-white px-3 py-2 !rounded-button whitespace-nowrap"
+                      >
+                        <i class="ri-chat-1-line"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="text-center mt-10">
+              <button
+                class="bg-[#2b2b2b] text-white px-6 py-3 font-medium !rounded-button whitespace-nowrap"
+              >
+                Load More Professionals <i class="ri-arrow-down-line ml-1"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- How It Works -->
+    <section class="py-16 bg-[#1A1A1A]">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold mb-3">How Shram Setu Works</h2>
+          <p class="text-gray-400">
+            Simple steps to connect with the right professionals for your
+            project
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Step 1 -->
+          <div class="bg-[#2b2b2b] rounded-lg p-8 text-center relative">
+            <div
+              class="absolute -top-5 left-1/2 transform -translate-x-1/2 w-10 h-10 flex items-center justify-center bg-primary rounded-full text-white font-bold"
+            >
+              1
+            </div>
+            <div
+              class="w-20 h-20 flex items-center justify-center bg-primary/10 rounded-full mx-auto mb-6"
+            >
+              <i class="ri-search-line text-primary ri-2x"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-4">Search Professionals</h3>
+            <p class="text-gray-400">
+              Browse through our extensive network of verified construction
+              professionals by category, experience, or location.
+            </p>
+          </div>
+          <!-- Step 2 -->
+          <div class="bg-[#2b2b2b] rounded-lg p-8 text-center relative">
+            <div
+              class="absolute -top-5 left-1/2 transform -translate-x-1/2 w-10 h-10 flex items-center justify-center bg-primary rounded-full text-white font-bold"
+            >
+              2
+            </div>
+            <div
+              class="w-20 h-20 flex items-center justify-center bg-primary/10 rounded-full mx-auto mb-6"
+            >
+              <i class="ri-calendar-check-line text-primary ri-2x"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-4">Book & Pay Securely</h3>
+            <p class="text-gray-400">
+              Schedule appointments with professionals, discuss project details,
+              and make secure payments through our platform.
+            </p>
+          </div>
+          <!-- Step 3 -->
+          <div class="bg-[#2b2b2b] rounded-lg p-8 text-center relative">
+            <div
+              class="absolute -top-5 left-1/2 transform -translate-x-1/2 w-10 h-10 flex items-center justify-center bg-primary rounded-full text-white font-bold"
+            >
+              3
+            </div>
+            <div
+              class="w-20 h-20 flex items-center justify-center bg-primary/10 rounded-full mx-auto mb-6"
+            >
+              <i class="ri-building-4-line text-primary ri-2x"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-4">Complete Your Project</h3>
+            <p class="text-gray-400">
+              Track progress in real-time, communicate with professionals, and
+              leave reviews after project completion.
+            </p>
+          </div>
+        </div>
+        <div class="mt-12 text-center">
+          <button
+            class="bg-primary text-white px-6 py-3 font-medium !rounded-button whitespace-nowrap"
+          >
+            Get Started Now <i class="ri-arrow-right-line ml-1"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+    <!-- Registration/Login CTA -->
+    <section
+      class="py-16 bg-[#121212]"
+      style="background-image: linear-gradient(to right, rgba(18, 18, 18, 0.9), rgba(18, 18, 18, 0.7)), url('https://public.readdy.ai/ai/img_res/78795e1e7351310c09833937b9167ab5.jpg'); background-size: cover; background-position: center;"
+    >
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row gap-10">
+          <!-- Client Registration -->
+          <div class="md:w-1/2 bg-[#1A1A1A] rounded-lg p-8">
+            <div
+              class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-6"
+            >
+              <i class="ri-user-search-line text-primary ri-2x"></i>
+            </div>
+            <h3 class="text-2xl font-semibold mb-4">
+              Looking for Professionals?
+            </h3>
+            <p class="text-gray-400 mb-6">
+              Register as a client to access our network of verified
+              construction professionals. Post your requirements and get matched
+              with the right experts.
+            </p>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-center">
+                <i class="ri-check-line text-secondary mr-3"></i>
+                <span>Access to 1000+ verified professionals</span>
+              </li>
+              <li class="flex items-center">
+                <i class="ri-check-line text-secondary mr-3"></i>
+                <span>Secure payment protection</span>
+              </li>
+              <li class="flex items-center">
+                <i class="ri-check-line text-secondary mr-3"></i>
+                <span>Real-time project tracking</span>
+              </li>
+              <li class="flex items-center">
+                <i class="ri-check-line text-secondary mr-3"></i>
+                <span>Verified reviews and ratings</span>
+              </li>
+            </ul>
+            <button
+              class="bg-primary text-white px-6 py-3 font-medium !rounded-button whitespace-nowrap"
+            >
+              Register as Client
+            </button>
+          </div>
+          <!-- Professional Registration -->
+          <div class="md:w-1/2 bg-[#1A1A1A] rounded-lg p-8">
+            <div
+              class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-6"
+            >
+              <i class="ri-tools-line text-primary ri-2x"></i>
+            </div>
+            <h3 class="text-2xl font-semibold mb-4">
+              Are You a Construction Professional?
+            </h3>
+            <p class="text-gray-400 mb-6">
+              Join our platform to showcase your skills, find new clients, and
+              grow your business. Create a professional profile and start
+              receiving job requests.
+            </p>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-center">
+                <i class="ri-check-line text-secondary mr-3"></i>
+                <span>Steady stream of client requests</span>
+              </li>
+              <li class="flex items-center">
+                <i class="ri-check-line text-secondary mr-3"></i>
+                <span>Secure and timely payments</span>
+              </li>
+              <li class="flex items-center">
+                <i class="ri-check-line text-secondary mr-3"></i>
+                <span>Professional profile showcase</span>
+              </li>
+              <li class="flex items-center">
+                <i class="ri-check-line text-secondary mr-3"></i>
+                <span>Business growth opportunities</span>
+              </li>
+            </ul>
+            <button
+              class="bg-secondary text-[#1A1A1A] px-6 py-3 font-medium !rounded-button whitespace-nowrap"
+            >
+              Register as Professional
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Career Section -->
+    <section class="py-16 bg-[#1A1A1A]">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold mb-3">Career Opportunities</h2>
+          <p class="text-gray-400">
+            Find the perfect job in the construction industry or post openings
+            for your company
+          </p>
+        </div>
+        <div class="flex flex-col lg:flex-row gap-8">
+          <!-- Job Filters -->
+          <div class="lg:w-1/4">
+            <div class="bg-[#2b2b2b] rounded-lg p-6">
+              <h3 class="text-xl font-semibold mb-6">Job Filters</h3>
+              <!-- Job Type -->
+              <div class="mb-6">
+                <h4 class="font-medium mb-3">Job Type</h4>
+                <div class="space-y-3">
+                  <div class="flex items-center">
+                    <label class="custom-checkbox pl-8 relative">
+                      <input type="checkbox" checked />
+                      <span class="checkmark"></span>
+                      Full-time
+                    </label>
+                  </div>
+                  <div class="flex items-center">
+                    <label class="custom-checkbox pl-8 relative">
+                      <input type="checkbox" checked />
+                      <span class="checkmark"></span>
+                      Part-time
+                    </label>
+                  </div>
+                  <div class="flex items-center">
+                    <label class="custom-checkbox pl-8 relative">
+                      <input type="checkbox" />
+                      <span class="checkmark"></span>
+                      Contract
+                    </label>
+                  </div>
+                  <div class="flex items-center">
+                    <label class="custom-checkbox pl-8 relative">
+                      <input type="checkbox" />
+                      <span class="checkmark"></span>
+                      Internship
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <!-- Experience Level -->
+              <div class="mb-6">
+                <h4 class="font-medium mb-3">Experience Level</h4>
+                <div class="space-y-3">
+                  <div class="flex items-center">
+                    <label class="custom-checkbox pl-8 relative">
+                      <input type="checkbox" />
+                      <span class="checkmark"></span>
+                      Entry Level
+                    </label>
+                  </div>
+                  <div class="flex items-center">
+                    <label class="custom-checkbox pl-8 relative">
+                      <input type="checkbox" checked />
+                      <span class="checkmark"></span>
+                      Mid Level
+                    </label>
+                  </div>
+                  <div class="flex items-center">
+                    <label class="custom-checkbox pl-8 relative">
+                      <input type="checkbox" checked />
+                      <span class="checkmark"></span>
+                      Senior Level
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <!-- Location -->
+              <div class="mb-6">
+                <h4 class="font-medium mb-3">Location</h4>
+                <div class="relative">
+                  <div
+                    class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"
+                  >
+                    <i class="ri-map-pin-line text-gray-400"></i>
+                  </div>
+                  <input
+                    type="text"
+                    class="w-full pl-10 pr-3 py-2 bg-[#1A1A1A] border-none rounded text-white"
+                    placeholder="Enter location"
+                  />
+                </div>
+              </div>
+              <!-- Salary Range -->
+              <div class="mb-6">
+                <h4 class="font-medium mb-3">Salary Range (₹/month)</h4>
+                <div class="flex justify-between mb-2">
+                  <span>₹25,000</span>
+                  <span>₹2,50,000</span>
+                </div>
+                <input
+                  type="range"
+                  min="25000"
+                  max="250000"
+                  step="5000"
+                  value="100000"
+                  class="custom-range"
+                />
+              </div>
+              <!-- Apply Filters -->
+              <button
+                class="w-full bg-primary text-white px-4 py-3 font-medium !rounded-button whitespace-nowrap"
+              >
+                Apply Filters
+              </button>
+            </div>
+          </div>
+          <!-- Job Listings -->
+          <div class="lg:w-3/4">
+            <div class="flex justify-between items-center mb-6">
+              <div class="flex space-x-2">
+                <button class="px-4 py-2 bg-primary text-white rounded-full">
+                  All Jobs
+                </button>
+                <button class="px-4 py-2 bg-[#2b2b2b] text-white rounded-full">
+                  Engineering
+                </button>
+                <button class="px-4 py-2 bg-[#2b2b2b] text-white rounded-full">
+                  Architecture
+                </button>
+                <button class="px-4 py-2 bg-[#2b2b2b] text-white rounded-full">
+                  Management
+                </button>
+              </div>
+              <div class="flex items-center">
+                <span class="mr-2">Sort by:</span>
+                <select
+                  class="bg-[#2b2b2b] text-white border-none rounded px-3 py-2 pr-8 appearance-none"
+                >
+                  <option>Date: Newest First</option>
+                  <option>Salary: High to Low</option>
+                  <option>Relevance</option>
+                </select>
+              </div>
+            </div>
+            <div class="space-y-6">
+              <!-- Job 1 -->
+              <div class="bg-[#2b2b2b] rounded-lg p-6">
+                <div class="flex justify-between items-start">
+                  <div>
+                    <h3 class="text-xl font-semibold">
+                      Senior Structural Engineer
+                    </h3>
+                    <p class="text-gray-400">
+                      Buildtech Constructions Pvt. Ltd.
+                    </p>
+                  </div>
+                  <span
+                    class="bg-primary px-3 py-1 rounded-full text-sm font-medium"
+                    >Full-time</span
+                  >
+                </div>
+                <div class="flex flex-wrap gap-4 mt-4">
+                  <div class="flex items-center text-gray-300">
+                    <i class="ri-map-pin-line mr-2"></i>
+                    <span>Mumbai, Maharashtra</span>
+                  </div>
+                  <div class="flex items-center text-gray-300">
+                    <i class="ri-money-rupee-circle-line mr-2"></i>
+                    <span>₹1,20,000 - ₹1,80,000/month</span>
+                  </div>
+                  <div class="flex items-center text-gray-300">
+                    <i class="ri-briefcase-line mr-2"></i>
+                    <span>8+ years experience</span>
+                  </div>
+                </div>
+                <div class="mt-4">
+                  <p class="text-gray-300">
+                    We are looking for an experienced Structural Engineer to
+                    join our team for designing and analyzing structural systems
+                    for commercial and residential projects.
+                  </p>
+                </div>
+                <div class="mt-4 flex flex-wrap gap-2">
+                  <span
+                    class="bg-[#1A1A1A] text-gray-300 px-3 py-1 rounded-full text-sm"
+                    >Structural Design</span
+                  >
+                  <span
+                    class="bg-[#1A1A1A] text-gray-300 px-3 py-1 rounded-full text-sm"
+                    >AutoCAD</span
+                  >
+                  <span
+                    class="bg-[#1A1A1A] text-gray-300 px-3 py-1 rounded-full text-sm"
+                    >STAAD Pro</span
+                  >
+                  <span
+                    class="bg-[#1A1A1A] text-gray-300 px-3 py-1 rounded-full text-sm"
+                    >Project Management</span
+                  >
+                </div>
+                <div class="mt-6 flex justify-between items-center">
+                  <span class="text-gray-400">Posted 2 days ago</span>
+                  <button
+                    class="bg-primary text-white px-4 py-2 !rounded-button whitespace-nowrap"
+                  >
+                    Apply Now
+                  </button>
+                </div>
+              </div>
+              <!-- Job 2 -->
+              <div class="bg-[#2b2b2b] rounded-lg p-6">
+                <div class="flex justify-between items-start">
+                  <div>
+                    <h3 class="text-xl font-semibold">Interior Designer</h3>
+                    <p class="text-gray-400">Spaces Design Studio</p>
+                  </div>
+                  <span
+                    class="bg-secondary text-[#1A1A1A] px-3 py-1 rounded-full text-sm font-medium"
+                    >Part-time</span
+                  >
+                </div>
+                <div class="flex flex-wrap gap-4 mt-4">
+                  <div class="flex items-center text-gray-300">
+                    <i class="ri-map-pin-line mr-2"></i>
+                    <span>Bangalore, Karnataka</span>
+                  </div>
+                  <div class="flex items-center text-gray-300">
+                    <i class="ri-money-rupee-circle-line mr-2"></i>
+                    <span>₹50,000 - ₹70,000/month</span>
+                  </div>
+                  <div class="flex items-center text-gray-300">
+                    <i class="ri-briefcase-line mr-2"></i>
+                    <span>3-5 years experience</span>
+                  </div>
+                </div>
+                <div class="mt-4">
+                  <p class="text-gray-300">
+                    Looking for a creative Interior Designer to join our team
+                    for residential and commercial interior design projects.
+                    Must have excellent visualization skills.
+                  </p>
+                </div>
+                <div class="mt-4 flex flex-wrap gap-2">
+                  <span
+                    class="bg-[#1A1A1A] text-gray-300 px-3 py-1 rounded-full text-sm"
+                    >3D Visualization</span
+                  >
+                  <span
+                    class="bg-[#1A1A1A] text-gray-300 px-3 py-1 rounded-full text-sm"
+                    >SketchUp</span
+                  >
+                  <span
+                    class="bg-[#1A1A1A] text-gray-300 px-3 py-1 rounded-full text-sm"
+                    >AutoCAD</span
+                  >
+                  <span
+                    class="bg-[#1A1A1A] text-gray-300 px-3 py-1 rounded-full text-sm"
+                    >Color Theory</span
+                  >
+                </div>
+                <div class="mt-6 flex justify-between items-center">
+                  <span class="text-gray-400">Posted 1 week ago</span>
+                  <button
+                    class="bg-primary text-white px-4 py-2 !rounded-button whitespace-nowrap"
+                  >
+                    Apply Now
+                  </button>
+                </div>
+              </div>
+              <!-- Job 3 -->
+              <div class="bg-[#2b2b2b] rounded-lg p-6">
+                <div class="flex justify-between items-start">
+                  <div>
+                    <h3 class="text-xl font-semibold">Junior Architect</h3>
+                    <p class="text-gray-400">
+                      Innovative Architects & Associates
+                    </p>
+                  </div>
+                  <span
+                    class="bg-primary px-3 py-1 rounded-full text-sm font-medium"
+                    >Full-time</span
+                  >
+                </div>
+                <div class="flex flex-wrap gap-4 mt-4">
+                  <div class="flex items-center text-gray-300">
+                    <i class="ri-map-pin-line mr-2"></i>
+                    <span>Delhi NCR</span>
+                  </div>
+                  <div class="flex items-center text-gray-300">
+                    <i class="ri-money-rupee-circle-line mr-2"></i>
+                    <span>₹40,000 - ₹60,000/month</span>
+                  </div>
+                  <div class="flex items-center text-gray-300">
+                    <i class="ri-briefcase-line mr-2"></i>
+                    <span>0-2 years experience</span>
+                  </div>
+                </div>
+                <div class="mt-4">
+                  <p class="text-gray-300">
+                    We are seeking a talented Junior Architect to assist in
+                    designing residential and commercial projects under the
+                    guidance of senior architects.
+                  </p>
+                </div>
+                <div class="mt-4 flex flex-wrap gap-2">
+                  <span
+                    class="bg-[#1A1A1A] text-gray-300 px-3 py-1 rounded-full text-sm"
+                    >Revit</span
+                  >
+                  <span
+                    class="bg-[#1A1A1A] text-gray-300 px-3 py-1 rounded-full text-sm"
+                    >AutoCAD</span
+                  >
+                  <span
+                    class="bg-[#1A1A1A] text-gray-300 px-3 py-1 rounded-full text-sm"
+                    >3D Modeling</span
+                  >
+                  <span
+                    class="bg-[#1A1A1A] text-gray-300 px-3 py-1 rounded-full text-sm"
+                    >B.Arch</span
+                  >
+                </div>
+                <div class="mt-6 flex justify-between items-center">
+                  <span class="text-gray-400">Posted 3 days ago</span>
+                  <button
+                    class="bg-primary text-white px-4 py-2 !rounded-button whitespace-nowrap"
+                  >
+                    Apply Now
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="text-center mt-10">
+              <button
+                class="bg-[#2b2b2b] text-white px-6 py-3 font-medium !rounded-button whitespace-nowrap"
+              >
+                View More Jobs <i class="ri-arrow-down-line ml-1"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Contact Us -->
+    <section class="py-16 bg-[#121212]">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold mb-3">Contact Us</h2>
+          <p class="text-gray-400">
+            Have questions or need assistance? We're here to help!
+          </p>
+        </div>
+        <div class="flex flex-col md:flex-row gap-8">
+          <!-- Contact Form -->
+          <div class="md:w-2/3 bg-[#1A1A1A] rounded-lg p-8">
+            <h3 class="text-2xl font-semibold mb-6">Send Us a Message</h3>
+            <form>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div>
+                  <label class="block text-gray-300 mb-2">Full Name</label>
+                  <input
+                    type="text"
+                    class="w-full px-4 py-3 bg-[#2b2b2b] border-none rounded text-white"
+                    placeholder="Your name"
+                  />
+                </div>
+                <div>
+                  <label class="block text-gray-300 mb-2">Email Address</label>
+                  <input
+                    type="email"
+                    class="w-full px-4 py-3 bg-[#2b2b2b] border-none rounded text-white"
+                    placeholder="Your email"
+                  />
+                </div>
+              </div>
+              <div class="mb-6">
+                <label class="block text-gray-300 mb-2">Subject</label>
+                <input
+                  type="text"
+                  class="w-full px-4 py-3 bg-[#2b2b2b] border-none rounded text-white"
+                  placeholder="Message subject"
+                />
+              </div>
+              <div class="mb-6">
+                <label class="block text-gray-300 mb-2">Message</label>
+                <textarea
+                  rows="5"
+                  class="w-full px-4 py-3 bg-[#2b2b2b] border-none rounded text-white"
+                  placeholder="Your message"
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="bg-primary text-white px-6 py-3 font-medium !rounded-button whitespace-nowrap"
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
+          <!-- Contact Info -->
+          <div class="md:w-1/3 bg-[#1A1A1A] rounded-lg p-8">
+            <h3 class="text-2xl font-semibold mb-6">Contact Information</h3>
+            <div class="space-y-6">
+              <div class="flex items-start">
+                <div
+                  class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full mr-4"
+                >
+                  <i class="ri-map-pin-line text-primary"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium mb-1">Office Address</h4>
+                  <p class="text-gray-400">
+                    123 Construction Avenue, Tech Park, Bangalore - 560001,
+                    Karnataka, India
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div
